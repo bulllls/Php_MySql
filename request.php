@@ -33,6 +33,15 @@
 </body>
 </html> -->
 
+<?php
+$first_name = $_REQUEST['first_name'];
+$last_name = $_REQUEST['last_name'];
+$email = $_REQUEST['email'];
+$facebook_url = $_REQUEST['facebook_url'];
+$twitter_handle = $_REQUEST['twitter_handle'];
+?>
+
+
 <html>
 <head>
   <meta charset="utf-8">
@@ -44,11 +53,11 @@
 <div id="content">
 <p>Это структура с данными, получаемыми из формы:</p>
 <p>
-  Имя: <?php echo $_REQUEST['first_name']; ?><br>
-  Фамилия: <?php echo $_REQUEST['last_name']; ?><br>
-  Адрес Электронной почты: <?php echo $_REQUEST['email']; ?><br>
-  URL в Facebook: <?php echo $_REQUEST['facebook_url']; ?><br>
-  Идентификатор в Twitter: <?php echo $_REQUEST['twitter_handle']; ?><br>
+  Имя: <?php echo $first_name; ?><br>
+  Фамилия: <?php echo $last_name; ?><br>
+  Адрес электронной почты: <?php echo $email; ?><br>
+  URL-адрес в Facebook: <?php echo $facebook_url; ?><br>
+  Идентификатор в Twitter: <?php echo $twitter_handle; ?><br>
 </p>
 </div>
 <div id="footer"></div>
