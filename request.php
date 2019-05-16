@@ -37,7 +37,15 @@
 $first_name = $_REQUEST['first_name'];
 $last_name = $_REQUEST['last_name'];
 $email = $_REQUEST['email'];
-$facebook_url = $_REQUEST['facebook_url'];
+// $facebook_url = $_REQUEST['facebook_url'];
+//Функция strpos() (ее имя означает string position — позиция строки)
+//возвращает число, сообщающее о том, где в строке, в которой ведется поиск,
+//находится искомая строка.
+$position = strpos($facebook_url, "facebook.com");
+if ($position === false) {
+$facebook_url = "http://www.facebook.com/" . $facebook_url;
+}
+
 $twitter_handle = $_REQUEST['twitter_handle'];
 ?>
 
@@ -56,7 +64,8 @@ $twitter_handle = $_REQUEST['twitter_handle'];
   Имя: <?php echo $first_name. " ".$last_name ?><br>
   <!-- Фамилия: <?php echo $last_name; ?><br> -->
   Адрес электронной почты: <?php echo $email; ?><br>
-  URL-адрес в Facebook: <?php echo $facebook_url; ?><br>
+  <!-- URL-адрес в Facebook: <?php echo $facebook_url; ?><br> -->
+  <a href="<?php echo $facebook_url; ?>">Ваша страница на Facebook:</a><br>
   Идентификатор в Twitter: <?php echo $twitter_handle; ?><br>
 </p>
 </div>
