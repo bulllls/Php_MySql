@@ -53,8 +53,8 @@ $twitter_handle = $_REQUEST['twitter_handle'];
 <div id="content">
 <p>Это структура с данными, получаемыми из формы:</p>
 <p>
-  Имя: <?php echo $first_name; ?><br>
-  Фамилия: <?php echo $last_name; ?><br>
+  Имя: <?php echo $first_name. " ".$last_name ?><br>
+  <!-- Фамилия: <?php echo $last_name; ?><br> -->
   Адрес электронной почты: <?php echo $email; ?><br>
   URL-адрес в Facebook: <?php echo $facebook_url; ?><br>
   Идентификатор в Twitter: <?php echo $twitter_handle; ?><br>
