@@ -12,6 +12,14 @@ $facebook_url = "http://www.facebook.com/" . $facebook_url;
 }
 
 $twitter_handle = $_REQUEST['twitter_handle'];
+$twitter_url = "http://www.twitter.com/";
+$position = strpos($twitter_handle, "@");
+if ($position === false) {
+	$twitter_url = $twitter_url.$twitter_handle;
+} else {
+	//действия удаления @ из Twitter
+	$twitter_url = $twitter_url.substr($twitter_handle.$position + 1);
+}
 ?>
 
 
@@ -31,7 +39,7 @@ $twitter_handle = $_REQUEST['twitter_handle'];
   Адрес электронной почты: <?php echo $email; ?><br>
   <!-- URL-адрес в Facebook: <?php echo $facebook_url; ?><br> -->
   <a href="<?php echo $facebook_url; ?>">Ваша страница на Facebook:</a><br>
-  Идентификатор в Twitter: <?php echo $twitter_handle; ?><br>
+  <a href="<?php echo $twitter_url; ?>">Проверьте свой Twitter-канал</a><br>
 </p>
 </div>
 <div id="footer"></div>
