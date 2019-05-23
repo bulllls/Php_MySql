@@ -6,6 +6,8 @@ $email = trim($_REQUEST['email']);
 //Функция strpos() (ее имя означает string position — позиция строки)
 //возвращает число, сообщающее о том, где в строке, в которой ведется поиск,
 //находится искомая строка.
+$facebook_url = str_replace("facebook.org", "facebook.com",
+trim($_REQUEST['facebook_url']));
 $position = strpos($facebook_url, "facebook.com");
 if ($position === false) {
 $facebook_url = "http://www.facebook.com/" . $facebook_url;
@@ -25,7 +27,21 @@ if ($position === false) {
 как « Ого, как много пробелов. », но не поможет при удалении лишних пробелов в таких строках,
 как «Ого, как много пробелов.» -->
 
-
+<!-- Во многих случаях все, что можно сделать по отдельности, PHP позволяет сделать
+за один шаг. Рассмотрим следующий фрагмент PHP-сценария:
+$facebook_url =
+str_replace(
+"facebook.org",
+"facebook.com",
+trim($_REQUEST['facebook_url']));
+В этом коде объединены несколько разных действий. Его можно переписать
+следующим образом, чтобы сделать отдельные действия немного понятнее:
+$facebook_url = $_REQUEST['facebook_url'];
+$facebook_url = trim($facebook_url);
+$facebook_url =
+str_replace(
+"facebook.org", "facebook.com",
+$facebook_url); -->
 <html>
 	<head>
 		<meta charset="utf-8">
