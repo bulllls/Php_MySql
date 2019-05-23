@@ -1,7 +1,7 @@
 <?php
-$first_name = $_REQUEST['first_name'];
-$last_name = $_REQUEST['last_name'];
-$email = $_REQUEST['email'];
+$first_name = trim($_REQUEST['first_name']);
+$last_name = trim($_REQUEST['last_name']);
+$email = trim($_REQUEST['email']);
 // $facebook_url = $_REQUEST['facebook_url'];
 //Функция strpos() (ее имя означает string position — позиция строки)
 //возвращает число, сообщающее о том, где в строке, в которой ведется поиск,
@@ -11,7 +11,7 @@ if ($position === false) {
 $facebook_url = "http://www.facebook.com/" . $facebook_url;
 }
 
-$twitter_handle = $_REQUEST['twitter_handle'];
+$twitter_handle = trim($_REQUEST['twitter_handle']);
 $twitter_url = "http://www.twitter.com/";
 $position = strpos($twitter_handle, "@");
 if ($position === false) {
@@ -21,6 +21,9 @@ if ($position === false) {
 	$twitter_url = $twitter_url.substr($twitter_handle.$position + 1);
 }
 ?>
+<!-- Функция trim() (впрочем, как и функции rtrim() и ltrim()) удаляет только те пробелы, которые находятся за пределами текста. Поэтому функция trim() хорошо подходит для работы с такими строками,
+как « Ого, как много пробелов. », но не поможет при удалении лишних пробелов в таких строках,
+как «Ого, как много пробелов.» -->
 
 
 <html>
