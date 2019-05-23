@@ -1,14 +1,14 @@
 <?php
-$file_cabinet[0] = "Derek";
-$file_cabinet[1] = "Trucks";
-$file_cabinet[2] = "derek@DerekTrucks.com";
-$file_cabinet[3] = "http://www.facebook.com/DerekTrucks";
-$file_cabinet[4] = "@derekandsusan";
-$first_name = $file_cabinet[0];
-$last_name = $file_cabinet[1];
-$email = $file_cabinet[2];
-$facebook_url = $file_cabinet[3];
-$twitter_handle = $file_cabinet[4];
+$file_cabinet['first_name'] = "Derek";
+$file_cabinet['last_name'] = "Trucks";
+$file_cabinet['email'] = "derek@DerekTrucks.com";
+$file_cabinet['facebook_url'] = "http://www.facebook.com/DerekTrucks";
+$file_cabinet['twitter_handle'] = "@derekandsusan";
+$first_name = $file_cabinet['first_name'];
+$last_name = $file_cabinet['last_name'];
+$email = $file_cabinet['email'];
+$facebook_url = $file_cabinet['facebook_url'];
+$twitter_handle = $file_cabinet['twitter_handle'];
 echo $first_name . " " . $last_name;
 echo "\nАдрес электронной почты: " . $email;
 echo "\nURL-адрес в Facebook: " . $facebook_url;
